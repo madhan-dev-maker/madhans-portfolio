@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Madhan's Portfolio</title>
+    <meta
+      name="description"
+      content="Developer portfolio: projects, skills, and contact."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <div class="cursorGlow" aria-hidden="true"></div>
+
+    <a class="skipLink" href="#home">Skip to content</a>
+
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="#home" aria-label="Go to top">
+          <span class="brand__mark" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand__text">Your Name</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+            Menu
+          </button>
+          <div class="nav__menu" id="navMenu">
+            <a class="nav__link" href="#home" data-nav="home">Home</a>
+            <a class="nav__link" href="#projects" data-nav="projects">Projects</a>
+            <a class="nav__link" href="#about" data-nav="about">About</a>
+            <a class="nav__link" href="#skills" data-nav="skills">Skills</a>
+            <a class="nav__link" href="#contact" data-nav="contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="home" class="section hero hero--landing" aria-label="Hero">
+        <div class="landing">
+          <div class="landing__scroll" aria-hidden="true">scroll</div>
+          <div class="landing__leftRail" aria-hidden="true"></div>
+          <div class="landing__rightRail" aria-hidden="true"></div>
+
+          <div class="landing__grid">
+            <div class="landing__left">
+              <div class="landing__available">
+                <span class="landing__pulse" aria-hidden="true"></span>
+                available for work
+              </div>
+
+              <h1 class="landing__title" aria-label="MADHAN.PORTFOLIO">
+                <span class="landing__titleMain">MADHAN</span>
+                <span class="landing__dot" aria-hidden="true">.</span>
+                <span class="landing__titleAlt">PORTFOLIO</span>
+              </h1>
+
+              <div class="landing__tagline">discord &amp; fivem engineer • built different</div>
+
+              <div class="landing__copy">
+                High-performance bots. Immersive scripts.
+                <br />
+                Digital experiences for the gaming community.
+                <br />
+                <span class="landing__copyEm">Pure logic, zero bloat.</span>
+              </div>
+
+              <div class="landing__bottomRow">
+                <a class="btn landing__cta" href="#projects">
+                  SEE MY WORK <span class="landing__ctaArrow" aria-hidden="true">→</span>
+                </a>
+
+                <div class="landing__social" aria-label="Social links (placeholders)">
+                  <a class="landing__socialIcon" href="#" aria-label="Discord link" title="Discord">
+                    <span aria-hidden="true">⌁</span>
+                  </a>
+                  <a class="landing__socialIcon" href="#" aria-label="GitHub link" title="GitHub">
+                    <span aria-hidden="true">⌁</span>
+                  </a>
+                  <a class="landing__socialIcon" href="#" aria-label="X link" title="X">
+                    <span aria-hidden="true">⌁</span>
+                  </a>
+                  <a class="landing__socialIcon" href="#" aria-label="Instagram link" title="Instagram">
+                    <span aria-hidden="true">⌁</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="landing__right" aria-label="Tech stack / status">
+              <div class="landing__topBadges">
+                <div class="landing__smallBadge landing__smallBadge--lua">LUA</div>
+                <div class="landing__smallBadge landing__smallBadge--node">NODE.JS</div>
+              </div>
+
+              <div class="landing__bigNumber" aria-hidden="true">23</div>
+
+              <div class="landing__systemReady">[ SYSTEM READY ]</div>
+
+              <div class="landing__orbit">
+                <div class="landing__orbitBadge landing__orbitBadge--discord">DISCORD</div>
+                <div class="landing__orbitBadge landing__orbitBadge--fivem">FIVEM</div>
+                <div class="landing__orbitLine" aria-hidden="true"></div>
+              </div>
+
+              <a class="landing__terminalBtn" href="#about">
+                <span aria-hidden="true">〈/</span> BACKEND SYSTEMS <span aria-hidden="true">/〉</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-label="Projects">
+        <div class="sectionHead">
+          <h2 class="h2">
+            Projects
+            <span class="h2__slash" aria-hidden="true">/</span>
+          </h2>
+          <p class="muted">A few things I’ve built. Replace the content with your real links + descriptions.</p>
+        </div>
+
+        <!-- Music player placed on the Projects (2nd) section -->
+        <div class="musicPlayer musicPlayer--inline" role="region" aria-label="Music player">
+          <div class="musicPlayer__panel">
+            <div class="musicPlayer__art" aria-hidden="true"></div>
+
+            <div class="musicPlayer__mid">
+              <div class="musicPlayer__trackRow">
+                <div class="musicPlayer__track" id="musicTrackTitle">FEIN</div>
+                <div class="musicPlayer__badges">
+                  <span class="musicPlayer__chip" id="musicTrackSubtitle">discord &amp; fivem engineer</span>
+                  <span class="musicPlayer__chip musicPlayer__chip--ghost" id="musicTrackState">offline</span>
+                </div>
+              </div>
+
+              <div class="musicPlayer__meta" id="musicTrackMeta">
+                Travis Scott ft. Playboi Carti
+              </div>
+
+              <div class="musicPlayer__progressRow">
+                <span class="musicPlayer__time" id="musicCurTime">0:00</span>
+                <input
+                  class="musicPlayer__seek"
+                  id="musicSeek"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="0"
+                  aria-label="Seek"
+                />
+                <span class="musicPlayer__time" id="musicDurTime">3:11</span>
+              </div>
+            </div>
+
+            <div class="musicPlayer__right">
+              <button class="musicBtn" type="button" id="musicPrevBtn" aria-label="Previous track" title="Previous">
+                ◀
+              </button>
+              <button class="musicBtn musicBtn--primary" type="button" id="musicPlayBtn" aria-label="Play" title="Play">
+                ▶
+              </button>
+              <button class="musicBtn" type="button" id="musicNextBtn" aria-label="Next track" title="Next">
+                ▶▶
+              </button>
+
+              <div class="musicVol">
+                <button class="musicBtn musicBtn--icon" type="button" id="musicMuteBtn" aria-label="Mute" title="Mute">
+                  🔇
+                </button>
+                <input
+                  class="musicPlayer__vol"
+                  id="musicVol"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.7"
+                  aria-label="Volume"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid3" id="projectsGrid">
+          <!-- populated by script.js -->
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-label="About">
+        <div class="sectionHead sectionHead--tight">
+          <h2 class="h2">
+            About
+            <span class="h2__slash" aria-hidden="true">/</span>
+          </h2>
+        </div>
+
+        <div class="grid2">
+          <div class="panel panel--pad">
+            <h3 class="h3">Thoughtful engineering</h3>
+            <p class="muted">
+              I like building experiences that feel “alive”: responsive layouts, small details,
+              and animations that support the story instead of stealing attention.
+            </p>
+            <p class="muted">
+              This template is intentionally dependency-free so you can deploy it anywhere.
+              Swap the text, projects, and colors to match your style.
+            </p>
+            <div class="pillRow" aria-label="Highlights">
+              <span class="pill">UI polish</span>
+              <span class="pill">Motion + UX</span>
+              <span class="pill">Performance</span>
+              <span class="pill">TypeScript mindset</span>
+            </div>
+          </div>
+
+          <div class="panel panel--pad">
+            <h3 class="h3">Quick stats</h3>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat__n" data-count="20">0</div>
+                <div class="stat__k">Projects shipped</div>
+              </div>
+              <div class="stat">
+                <div class="stat__n" data-count="6">0</div>
+                <div class="stat__k">Years building</div>
+              </div>
+              <div class="stat">
+                <div class="stat__n" data-count="50">0</div>
+                <div class="stat__k">UI tweaks per release</div>
+              </div>
+            </div>
+
+            <div class="divider" role="separator" aria-hidden="true"></div>
+
+            <div class="callout">
+              <div class="callout__k badge badge--mono badge--ghost">Tip</div>
+              <p class="muted">
+                Add your real GitHub + socials in the contact section, then update the project cards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-label="Skills">
+        <div class="sectionHead">
+          <h2 class="h2">
+            Skills
+            <span class="h2__slash" aria-hidden="true">/</span>
+          </h2>
+          <p class="muted">A compact skills layout with animated progress bars.</p>
+        </div>
+
+        <div class="skills">
+          <div class="skill" data-skill="90">
+            <div class="skill__top">
+              <span class="skill__name">Frontend</span>
+              <span class="skill__pct">90%</span>
+            </div>
+            <div class="bar">
+              <span class="bar__fill" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="skill" data-skill="80">
+            <div class="skill__top">
+              <span class="skill__name">UI Engineering</span>
+              <span class="skill__pct">80%</span>
+            </div>
+            <div class="bar">
+              <span class="bar__fill" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="skill" data-skill="75">
+            <div class="skill__top">
+              <span class="skill__name">Animation / Motion</span>
+              <span class="skill__pct">75%</span>
+            </div>
+            <div class="bar">
+              <span class="bar__fill" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="skill" data-skill="70">
+            <div class="skill__top">
+              <span class="skill__name">Backend Basics</span>
+              <span class="skill__pct">70%</span>
+            </div>
+            <div class="bar">
+              <span class="bar__fill" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--last" aria-label="Contact">
+        <div class="sectionHead">
+          <h2 class="h2">
+            Contact
+            <span class="h2__slash" aria-hidden="true">/</span>
+          </h2>
+          <p class="muted">No backend needed. The form uses `mailto:` so it works anywhere.</p>
+        </div>
+
+        <div class="grid2 grid2--contact">
+          <div class="panel panel--pad">
+            <h3 class="h3">Let’s build something</h3>
+            <p class="muted">
+              Replace the email and socials in this file. If you want a real form submission,
+              wire it to EmailJS or a server endpoint later.
+            </p>
+
+            <div class="contactCards">
+              <a class="contactCard" href="mailto:you@example.com">
+                <span class="contactCard__k badge badge--mono badge--ghost">Email</span>
+                <span class="contactCard__v">you@example.com</span>
+              </a>
+              <a class="contactCard" href="https://github.com/your-username" target="_blank" rel="noreferrer">
+                <span class="contactCard__k badge badge--mono badge--ghost">GitHub</span>
+                <span class="contactCard__v">github.com/your-username</span>
+              </a>
+              <a class="contactCard" href="https://linkedin.com/in/your-handle" target="_blank" rel="noreferrer">
+                <span class="contactCard__k badge badge--mono badge--ghost">LinkedIn</span>
+                <span class="contactCard__v">linkedin.com/in/your-handle</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="panel panel--pad contactForm" id="contactForm">
+            <div class="fieldRow">
+              <label class="field">
+                <span class="field__label">Name</span>
+                <input class="field__input" name="name" type="text" placeholder="Jane Doe" autocomplete="name" required />
+              </label>
+              <label class="field">
+                <span class="field__label">Email</span>
+                <input class="field__input" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field__label">Message</span>
+              <textarea class="field__textarea" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+            </label>
+
+            <div class="formActions">
+              <button class="btn btn--primary" type="submit">Send message</button>
+              <button class="btn btn--ghost" type="reset">Reset</button>
+            </div>
+
+            <p class="fineprint">
+              This will open your email client. If you want an online inbox submission,
+              replace the handler in `script.js`.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="muted">
+            © <span id="year"></span> Your Name. Built with vanilla HTML/CSS/JS.
+          </div>
+          <div class="footer__links">
+            <a href="#home" class="link">Back to top</a>
+            <span class="sep" aria-hidden="true">•</span>
+            <a href="#projects" class="link">Projects</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <audio id="bgAudio" preload="metadata" loop>
+      <!-- Put your mp3 in: F:\Dev Dynsty\AI\music\track.mp3 -->
+      <source id="bgAudioSource" src="./music/track.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Fallback for when track file is missing: choose a local audio file -->
+    <input id="musicFileInput" type="file" accept="audio/*" hidden />
+  </body>
+</html>
+
