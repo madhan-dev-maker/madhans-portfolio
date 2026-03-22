@@ -464,9 +464,10 @@
   if (audio && playBtn && seek && curTimeEl && durTimeEl && vol && muteBtn) {
     // User-friendly default
     audio.volume = Math.max(0, Math.min(1, Number(vol.value) || 0.7));
-    audio.muted = false;
-    muteBtn.textContent = "🔊";
-    muteBtn.setAttribute("aria-label", "Mute");
+    // Start muted (autoplay-safe). We will unmute after the first user gesture.
+    audio.muted = true;
+    muteBtn.textContent = "🔇";
+    muteBtn.setAttribute("aria-label", "Unmute");
 
     let isSeeking = false;
 
@@ -512,6 +513,30 @@
       // ignore
     }
 
+    // Autoplay-safe attempt: play muted immediately.
+    try {
+      void audio.play();
+    } catch {
+      // Autoplay might be blocked; user gesture below will handle it.
+    }
+
+    let didUnmute = false;
+    const unmuteAndPlayOnce = async () => {
+      if (didUnmute) return;
+      didUnmute = true;
+      audio.muted = false;
+      muteBtn.textContent = "🔊";
+      muteBtn.setAttribute("aria-label", "Mute");
+      try {
+        if (audio.paused) await audio.play();
+      } catch {
+        // ignore; user can still use the play button.
+      }
+    };
+    // Unmute on first interaction (click/tap/keyboard).
+    document.addEventListener("pointerdown", unmuteAndPlayOnce, { once: true, passive: true });
+    document.addEventListener("keydown", unmuteAndPlayOnce, { once: true });
+
     audio.addEventListener("loadedmetadata", () => {
       syncDuration();
       syncTime();
@@ -547,6 +572,11 @@
           fileInput.click();
           return;
         }
+
+        // User clicked play, so allow sound.
+        audio.muted = false;
+        muteBtn.textContent = "🔊";
+        muteBtn.setAttribute("aria-label", "Mute");
 
         if (audio.paused) await audio.play();
         else audio.pause();
