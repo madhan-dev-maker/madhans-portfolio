@@ -20,18 +20,37 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
-html{ background:#000; }
+html,body{height:80%}
+html{ background:#000;
+opacity: 0.9; }
 body{
   margin:0;
   font-family:var(--sans);
   color:var(--text);
-  background-color:#000;
-  background: radial-gradient(900px 500px at 15% 10%, rgba(124,247,255,.12), transparent 55%),
-              radial-gradient(900px 500px at 85% 20%, rgba(139,125,255,.14), transparent 60%),
-              radial-gradient(900px 500px at 50% 90%, rgba(181,255,106,.09), transparent 60%),
-              linear-gradient(180deg, var(--bg0), var(--bg1));
+    url('') right / cover repeat fixed,
+
+    linear-gradient(180deg, var(--bg0), var(--bg1));
   overflow-x:hidden;
+  position: relative;   
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('https://media.discordapp.net/attachments/1484589862530187366/1484589919803277513/wrwrrr.jpg?ex=69bec79b&is=69bd761b&hm=3b9bc86cff04f2d638007197cce5a9fc04e66c47be55d63115bc3955aba5cf35&=&format=webp&width=643&height=965');
+  opacity: 0.3 ;
+  pointer-events: none;
+  animation: move-bg 50s linear infinite;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 2% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 canvas#bg{
@@ -985,12 +1004,14 @@ canvas#bg{
   background: linear-gradient(180deg, var(--panel), var(--panel2));
   position:relative;
   overflow:hidden;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+  box-shadow: 0 0 18px 2px rgb(0, 0, 0), 0 2px 24px 0 rgba(124,247,255,0.10);
 }
 .projectCard:hover{
   transform: translateY(-2px);
-  border-color: rgba(124,247,255,.25);
+  border-color: rgba(168, 124, 2, 0.25);
   background: linear-gradient(180deg, rgba(124,247,255,.12), rgba(14,19,31,.35));
+  box-shadow: 0 0 24px 6px rgba(0, 238, 255, 0.363), 0 2px 24px 0 rgba(124,247,255,0.18);
 }
 .projectCard__title{
   margin: 10px 0 8px;
